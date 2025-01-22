@@ -1,0 +1,36 @@
+// Lista de 32 animales
+const animales = [
+    "León", "Tigre", "Elefante", "Cebra", "Gorila", "Puma", "Águila", "Serpiente", 
+    "Jaguar", "Cocodrilo", "Delfín", "Ballena", "Tiburón", "Oso", "Canguro", "Pingüino",
+    "Lobo", "Jirafa", "Rinoceronte", "Hipopótamo", "Camello", "Caballo", "Llama", "Oveja",
+    "Perro", "Gato", "Zorro", "Búho", "Tortuga", "Ciervo", "Murciélago", "Mono"
+];
+
+// Función para elegir un animal aleatorio sin repetir
+function elegirAnimal(remainingAnimals) {
+    const randomIndex = Math.floor(Math.random() * remainingAnimals.length);
+    return remainingAnimals.splice(randomIndex, 1)[0]; // Elimina y devuelve el animal seleccionado
+}
+
+// Lógica principal
+function sorteoLoteria() {
+    const animalesRestantes = [...animales]; // Copia de la lista original
+    const animalesGanadores = [];
+
+    while (animalesRestantes.length > 0) {
+        const ganador = elegirAnimal(animalesRestantes);
+        animalesGanadores.push(ganador);
+
+        console.log(`¡El ganador es: ${ganador}!`);
+        console.log(`Animales restantes: ${animalesRestantes.length}`);
+
+        if (animalesRestantes.length === 0) {
+            console.log("Todos los animales han sido sorteados.");
+        }
+    }
+
+    return animalesGanadores;
+}
+
+// Ejecutar el sorteo
+sorteoLoteria();
