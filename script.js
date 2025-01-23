@@ -64,4 +64,4 @@ function sortearAnimal() {
 
 // Agregar evento al botón
 sorteoBtn.addEventListener("click", sortearAnimal);
-//prueba de cambio
+//prueba de cambio 2
